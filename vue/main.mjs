@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import routes from './routes.js'
+import routes from './routes.mjs'
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
@@ -26,7 +26,7 @@ const router = new Router({
   routes: routes
 })
 
-const vm = new Vue({
+const vm = window.vm = new Vue({
   router: router
 })
 

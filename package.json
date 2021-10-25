@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "workspaces": [
-    "webpack"
-  ],
   "scripts": {
     "dev": "cd webpack&&webpack serve --port 3000 --config ./config.dev.js",
     "build": "NODE_ENV=production webpack --config webpack/config.js",

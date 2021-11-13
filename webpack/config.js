@@ -16,7 +16,12 @@ module.exports = {
     }
   },
   output: {
-    clean: true,
+    clean: {
+      keep (asset) {
+        // console.log(asset)
+        return asset.includes('ignored/dir')
+      }
+    },
     path: webpackOutputPath,
     publicPath: publicPath,
     filename: '[contenthash].js',

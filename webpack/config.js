@@ -91,10 +91,7 @@ module.exports = {
           }
         }
       }, {
-        loader: require.resolve('pug-html-loader'),
-        options: {
-          doctype: 'html'
-        }
+        loader: require.resolve('pug-plain-loader')
       }]
     }, {
       test: /template.pug$/,
@@ -106,10 +103,7 @@ module.exports = {
           }
         }
       }, {
-        loader: require.resolve('pug-html-loader'),
-        options: {
-          doctype: 'html'
-        }
+        loader: require.resolve('pug-plain-loader')
       }]
     }, {
       test: /module\.css$/,

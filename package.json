@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/josudoey/webtool-template#readme",
   "devDependencies": {
-    "eslint": "^8.7.0",
+    "eslint": "^7.12.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-promise": "^5.0.0",
     "esprima": "^4.0.1",
     "gh-pages": "^3.2.3",
     "jquery": "^3.6.0"

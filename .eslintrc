@@ -1,5 +1,6 @@
 {
   "extends": "standard",
+  "parser": "esprima",
   "parserOptions": {
     "parser": "babel-eslint",
     "allowImportExportEverywhere": true

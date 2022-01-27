@@ -16,7 +16,12 @@ module.exports = {
     }
   },
   output: {
-    clean: true,
+    clean: {
+      keep (asset) {
+        // console.log(asset)
+        return asset.includes('ignored/dir')
+      }
+    },
     path: webpackOutputPath,
     publicPath: publicPath,
     filename: '[contenthash].js',
@@ -86,10 +91,7 @@ module.exports = {
           }
         }
       }, {
-        loader: require.resolve('pug-html-loader'),
-        options: {
-          doctype: 'html'
-        }
+        loader: require.resolve('pug-plain-loader')
       }]
     }, {
       test: /template.pug$/,
@@ -101,10 +103,7 @@ module.exports = {
           }
         }
       }, {
-        loader: require.resolve('pug-html-loader'),
-        options: {
-          doctype: 'html'
-        }
+        loader: require.resolve('pug-plain-loader')
       }]
     }, {
       test: /module\.css$/,

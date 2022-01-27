@@ -3,10 +3,3 @@ dist
 .vscode
 .cache
 package-lock.json
-
-# Yarn
-yarn-error.log
-yarn.lock
-/.yarn/*
-!/.yarn/plugins/
-!/.yarn/releases/

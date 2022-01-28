@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import { Portal, PortalTarget } from 'portal-vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import routes from './routes.mjs'
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.component('Portal', Portal)
+Vue.component('PortalTarget', PortalTarget)
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)

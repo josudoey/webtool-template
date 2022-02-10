@@ -29,17 +29,19 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.0.0",
     "esprima": "^4.0.1",
-    "gh-pages": "^3.2.3",
-    "jquery": "^3.6.0"
+    "gh-pages": "^3.2.3"
   },
   "dependencies": {
     "apply-loader": "^2.0.0",
+    "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.21.2",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
+    "jquery": "^3.6.0",
     "mini-css-extract-plugin": "^2.5.3",
+    "popper.js": "^1.16.1",
     "portal-vue": "^2.1.7",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",

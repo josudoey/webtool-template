@@ -4,6 +4,7 @@ export default {
   staticRenderFns,
   data () {
     return {
+      drawer: false
     }
   },
   mounted () {

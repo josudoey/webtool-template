@@ -8,6 +8,10 @@
     if (htmlWebpackPlugin.files.favicon) { %>
     <link href="<%= htmlWebpackPlugin.files.favicon %>" rel="shortcut icon" /><%
     } %><%
+    for (item of htmlWebpackPlugin.options.links) { %><%
+      if (typeof item === 'string' || item instanceof String) { item = { href: item, rel: 'stylesheet' } } %>
+    <link<% for (key in item) { %> <%= key %>="<%= item[key] %>"<% } %> /><%
+    } %><%
 
     for (key in htmlWebpackPlugin.files.css) { %><%
       if (htmlWebpackPlugin.files.cssIntegrity) { %>

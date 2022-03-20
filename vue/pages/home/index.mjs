@@ -1,7 +1,6 @@
-import { render, staticRenderFns } from './render.pug'
+import * as render from './render.pug'
 export default {
-  render,
-  staticRenderFns,
+  ...render,
   data () {
     return {
       drawer: false

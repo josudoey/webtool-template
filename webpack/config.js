@@ -23,8 +23,8 @@ module.exports = {
       }
     },
     path: webpackOutputPath,
-    publicPath: publicPath,
-    filename: '[contenthash].js',
+    publicPath: 'auto',
+    filename: 'main.js',
     chunkFilename: '[contenthash].js'
   },
   optimization: {

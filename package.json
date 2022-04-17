@@ -10,6 +10,7 @@
     "clean": "test -d dist&&rm -r dist||true",
     "dev": "npm run clean;webpack serve --config webpack/config.dev.js --port 8080",
     "build": "NODE_ENV=production webpack --config webpack/config.js",
+    "build:chrome-ext": "npm run build;cp chrome-ext/* ./dist;",
     "deploy": "gh-pages -d dist"
   },
   "repository": {

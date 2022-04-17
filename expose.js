@@ -9,7 +9,7 @@ module.exports = {
   entry: path.join(projectPath, './vue/entry.mjs'),
   html: {
     appMountId: 'app',
-    appMountHtmlSnippet: '<router-view></router-view>',
+    appMountHtmlSnippet: '',
     lang: 'en-US',
     title: '',
     meta: [{

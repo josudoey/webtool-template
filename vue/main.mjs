@@ -25,9 +25,11 @@ const router = new Router({
   routes: routes
 })
 
+const div = document.createElement('div')
+div.appendChild(document.createElement('router-view'))
+document.body.appendChild(div)
 const vm = window.vm = new Vue({
   vuetify: new Vuetify({}),
   router: router
 })
-
-vm.$mount('#app')
+vm.$mount(div)

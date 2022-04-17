@@ -1,1 +1,1 @@
-import './main.mjs'
+import('./main.mjs')

@@ -1,5 +1,5 @@
 export default [{
   name: 'home',
   path: '/',
-  component: () => import('./pages/home/index.mjs')
+  component: () => import('./pages/home/index.ts')
 }]

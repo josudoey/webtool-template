@@ -3,16 +3,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
+const webpack = require('webpack')
 const { entry, distPath, publicPath, html } = require('../expose')
 const webpackOutputPath = path.join(distPath, publicPath)
+
 module.exports = {
   target: 'web',
   mode: 'production',
-  entry: entry,
+  entry,
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.esm.js'
+      vue$: 'vue/dist/vue.esm-bundler.js'
     }
   },
   output: {
@@ -65,39 +66,28 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.(png|jpe?g|gif|svg)$/,
-      type: 'asset/resource',
-      generator: {
-        filename: './img/[contenthash][ext]'
-      }
+      test: /\.jsx$/,
+      exclude: /node_modules/,
+      use: [{
+        loader: require.resolve('babel-loader'),
+        options: {}
+      }]
     }, {
-      test: /\.(woff2?|eot|ttf|otf)$/,
-      type: 'asset/resource',
-      generator: {
-        filename: './font/[contenthash][ext]'
-      }
-    }, {
-      test: /\.html$/,
-      loader: require.resolve('html-loader'),
-      options: {
-        minimize: true
-      }
+      test: /\.tsx?$/,
+      exclude: /node_modules/,
+      use: [{
+        loader: require.resolve('babel-loader'),
+        options: {}
+      }, {
+        loader: require.resolve('ts-loader'),
+        options: {
+          configFile: 'tsconfig.webpack.json'
+        }
+      }]
     }, {
       test: /render.pug$/,
       use: [{
-        loader: require.resolve('vue-loader/lib/loaders/templateLoader.js'),
-        options: {
-          minimize: {
-            collapseBooleanAttributes: true
-          }
-        }
-      }, {
-        loader: require.resolve('pug-plain-loader')
-      }]
-    }, {
-      test: /template.pug$/,
-      use: [{
-        loader: require.resolve('html-loader'),
+        loader: require.resolve('vue-loader/dist/templateLoader.js'),
         options: {
           minimize: {
             collapseBooleanAttributes: true
@@ -110,9 +100,7 @@ module.exports = {
       test: /module\.css$/,
       use: [{
         loader: MiniCssExtractPlugin.loader,
-        options: {
-          publicPath: '../'
-        }
+        options: {}
       }, {
         loader: require.resolve('css-loader'),
         options: {
@@ -129,7 +117,6 @@ module.exports = {
       use: [{
         loader: MiniCssExtractPlugin.loader,
         options: {
-          publicPath: '../'
         }
       }, {
         loader: require.resolve('css-loader'),
@@ -137,33 +124,18 @@ module.exports = {
           importLoaders: 0
         }
       }]
-    }, {
-      test: /\.s(c|a)ss$/,
-      use: [
-        {
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            publicPath: '../'
-          }
-        }, {
-          loader: require.resolve('css-loader'),
-          options: {
-            importLoaders: 0
-          }
-        },
-        {
-          loader: require.resolve('sass-loader'), // Requires sass-loader@^7.0.0
-          options: {
-            implementation: require('sass'), // Requires >= sass-loader@^8.0.0
-            sassOptions: {
-              indentedSyntax: true // optional
-            }
-          }
-        }
-      ]
     }]
   },
   plugins: [
+    new webpack.WatchIgnorePlugin({
+      paths: [
+        /\.d\.ts$/
+      ]
+    }),
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: false
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[contenthash].css',
       chunkFilename: 'css/[contenthash].css'

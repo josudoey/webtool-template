@@ -1,19 +1,13 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import { Portal, PortalTarget } from 'portal-vue'
-import Vuetify from 'vuetify'
+import { createApp } from 'vue'
+import { createRouter, createWebHashHistory } from 'vue-router'
+import { createVuetify } from 'vuetify'
+
 import routes from './routes.mjs'
-import 'vuetify/dist/vuetify.min.css'
+import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.min.css'
 
-Vue.use(Vuetify)
-Vue.component('Portal', Portal)
-Vue.component('PortalTarget', PortalTarget)
-
-Vue.use(Router)
-
-const router = new Router({
-  mode: 'hash',
+const router = createRouter({
+  history: createWebHashHistory(),
   base: '/',
   linkActiveClass: 'active',
   scrollBehavior (to, from, savedPosition) {
@@ -22,14 +16,15 @@ const router = new Router({
     }
     return { x: 0, y: 0 }
   },
-  routes: routes
+  routes
 })
 
+const app = window.app = createApp({})
+const vuetify = createVuetify({})
+app.use(vuetify)
+app.use(router)
 const div = document.createElement('div')
 div.appendChild(document.createElement('router-view'))
 document.body.appendChild(div)
-const vm = window.vm = new Vue({
-  vuetify: new Vuetify({}),
-  router: router
-})
-vm.$mount(div)
+
+app.mount(div)

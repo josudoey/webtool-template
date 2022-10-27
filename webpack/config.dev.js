@@ -1,6 +1,7 @@
-const { distPath } = require('../expose')
-const config = require('./config')
-module.exports = Object.assign({}, config, {
+import { distPath } from '../expose.js'
+import config from './config.js'
+
+export default Object.assign({}, config, {
   mode: 'development',
   devtool: 'source-map',
   devServer: {

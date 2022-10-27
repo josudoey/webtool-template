@@ -1,13 +1,19 @@
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
-const { entry, distPath, publicPath, html } = require('../expose')
-const webpackOutputPath = path.join(distPath, publicPath)
+import path from 'path'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
+import TerserPlugin from 'terser-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import webpack from 'webpack'
+import { entry, distPath, publicPath, html } from '../expose.js'
+import { createRequire } from 'module'
 
-module.exports = {
+import { fileURLToPath } from 'url'
+const webpackOutputPath = path.join(distPath, publicPath)
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const require = createRequire(import.meta.url)
+
+export default {
   target: 'web',
   mode: 'production',
   entry,

@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { createVuetify } from 'vuetify'
 
-import routes from './routes.mjs'
+import routes from './routes.js'
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.min.css'
 

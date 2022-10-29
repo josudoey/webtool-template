@@ -1,6 +1,4 @@
-v-app
-  v-navigation-drawer(v-model='drawer' app)
-  v-app-bar(app)
-    v-app-bar-nav-icon(@click='drawer = !drawer')
-    v-app-bar-title template
-  v-main
+template(v-if="opened")
+  VBtn(@click="toggle") Close
+template(v-else)
+  VBtn(@click="toggle") Open

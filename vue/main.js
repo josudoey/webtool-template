@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { createVuetify } from 'vuetify'
-
+import App from './app/index.js'
 import routes from './routes.js'
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.min.css'
@@ -19,7 +19,7 @@ const router = createRouter({
   routes
 })
 
-const app = window.app = createApp({})
+const app = window.app = createApp(App)
 const vuetify = createVuetify({})
 app.use(vuetify)
 app.use(router)

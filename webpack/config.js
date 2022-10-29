@@ -144,7 +144,8 @@ export default {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[contenthash].css',
-      chunkFilename: 'css/[contenthash].css'
+      chunkFilename: 'css/[contenthash].css',
+      ignoreOrder: true
     }),
     new HtmlWebpackPlugin(Object.assign({}, html, {
       inject: true,

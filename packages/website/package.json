@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "~website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josudoey/webtool-template.git"
+  },
+  "author": "Joey Fang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josudoey/webtool-template/issues"
+  },
+  "homepage": "https://github.com/josudoey/webtool-template#readme",
+  "devDependencies": {
+    "bootstrap": "^4.6.1",
+    "bootstrap-vue": "^2.21.2",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
+    "portal-vue": "^2.1.7",
+    "vue": "^2.7.14",
+    "vue-router": "^3.5.3",
+    "~webpack5": "workspace:*"
+  },
+  "dependencies": {}
+}

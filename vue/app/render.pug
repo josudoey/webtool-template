@@ -1,9 +1,0 @@
-v-app
-  v-navigation-drawer(v-model='opened' app)
-    v-list-item(prepend-icon="mdi-home" title="Home" @click="$router.push({name:'home'})")
-    v-list-item(prepend-icon="mdi-react" title="JSX" @click="$router.push({name:'jsx'})")
-  v-app-bar(app)
-    v-app-bar-nav-icon(@click='toggle')
-    v-app-bar-title {{AppTitle}}
-  v-main
-    router-view

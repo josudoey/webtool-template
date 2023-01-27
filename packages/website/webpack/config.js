@@ -3,6 +3,7 @@ import MiniCssExtractPlugin from '~webpack5/plugins/mini-css-extract.js'
 import CssMinimizerPlugin from '~webpack5/plugins/css-minimizer.js'
 import TerserPlugin from '~webpack5/plugins/terser.js'
 import HtmlWebpackPlugin from '~webpack5/plugins/html.js'
+import webpack from '~webpack5'
 
 import { createRequire } from 'module'
 import { fileURLToPath } from 'url'
@@ -34,7 +35,7 @@ export default function (env) {
     entry: require.resolve('./entry.js'),
     resolve: {
       alias: {
-        vue$: 'vue/dist/vue.esm.js'
+        vue: '@vue/compat'
       }
     },
     output: {
@@ -88,12 +89,8 @@ export default function (env) {
       rules: [{
         test: /render.pug$/,
         use: [{
-          loader: require.resolve('~webpack5/vue2-template-loader.js'),
-          options: {
-            minimize: {
-              collapseBooleanAttributes: true
-            }
-          }
+          loader: require.resolve('~webpack5/vue3-template-loader.js'),
+          options: {}
         }, {
           loader: require.resolve('~webpack5/pug-plain-loader.js')
         }]

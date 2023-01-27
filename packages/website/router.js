@@ -1,11 +1,9 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import { createRouter as createVueRouter, createWebHashHistory } from 'vue-router'
 import routes from './routes.js'
 
-Vue.use(Router)
 export function createRouter () {
-  const router = new Router({
-    mode: 'hash',
+  const router = createVueRouter({
+    history: createWebHashHistory(),
     base: '/',
     linkActiveClass: 'active',
     scrollBehavior (to, from, savedPosition) {

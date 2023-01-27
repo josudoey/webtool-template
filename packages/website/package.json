@@ -17,14 +17,15 @@
   },
   "homepage": "https://github.com/josudoey/webtool-template#readme",
   "devDependencies": {
+    "@vue/compat": "^3.2.45",
+    "@vue/compiler-sfc": "^3.2.45",
     "bootstrap": "^4.6.1",
-    "bootstrap-vue": "^2.21.2",
+    "bootstrap-vue": "^2.23.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
-    "portal-vue": "^2.1.7",
-    "vue": "^2.7.14",
-    "vue-router": "^3.5.3",
+    "portal-vue": "^3.0.0",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6",
     "~webpack5": "workspace:*"
-  },
-  "dependencies": {}
+  }
 }

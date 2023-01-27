@@ -16,4 +16,5 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 const app = window.app = createApp()
-app.$mount('#app')
+
+app.mount('#app')

@@ -54,7 +54,6 @@ importers:
 
   packages/webpack5:
     specifiers:
-      ~vue3-template-loader: workspace:*
       css-loader: ^6.7.3
       css-minimizer-webpack-plugin: ^4.2.2
       html-loader: ^4.2.0
@@ -67,7 +66,6 @@ importers:
       webpack-cli: ^5.0.1
       webpack-manifest-plugin: ^5.0.0
     devDependencies:
-      ~vue3-template-loader: link:../vue3-template-loader
       css-loader: 6.7.3_webpack@5.75.0
       css-minimizer-webpack-plugin: 4.2.2_webpack@5.75.0
       html-loader: 4.2.0_webpack@5.75.0
@@ -83,24 +81,22 @@ importers:
   packages/website:
     specifiers:
       '@vue/compat': ^3.2.45
-      '@vue/compiler-sfc': ^3.2.45
+      ~vue3-template-loader: workspace:*
       ~webpack5: workspace:*
       bootstrap: ^4.6.1
       bootstrap-vue: ^2.23.0
-      jquery: ^3.6.0
       popper.js: ^1.16.1
-      portal-vue: ^3.0.0
+      portal-vue: ^v2.1.7
       vue: ^3.2.45
       vue-router: ^4.1.6
     devDependencies:
       '@vue/compat': 3.2.45_vue@3.2.45
-      '@vue/compiler-sfc': 3.2.45
+      ~vue3-template-loader: link:../vue3-template-loader
       ~webpack5: link:../webpack5
-      bootstrap: 4.6.2_jquery@3.6.3+popper.js@1.16.1
-      bootstrap-vue: 2.23.1_jquery@3.6.3+vue@3.2.45
-      jquery: 3.6.3
+      bootstrap: 4.6.2_popper.js@1.16.1
+      bootstrap-vue: 2.23.1_vue@3.2.45
       popper.js: 1.16.1
-      portal-vue: 3.0.0_vue@3.2.45
+      portal-vue: 2.1.7_vue@3.2.45
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
 
@@ -1294,12 +1290,12 @@ packages:
     resolution: {integrity: sha1-aN/1++YMUes3cl6p4+0xDcwed24=}
     dev: true
 
-  /bootstrap-vue/2.23.1_jquery@3.6.3+vue@3.2.45:
+  /bootstrap-vue/2.23.1_vue@3.2.45:
     resolution: {integrity: sha512-SEWkG4LzmMuWjQdSYmAQk1G/oOKm37dtNfjB5kxq0YafnL2W6qUAmeDTcIZVbPiQd2OQlIkWOMPBRGySk/zGsg==}
     requiresBuild: true
     dependencies:
       '@nuxt/opencollective': 0.3.3
-      bootstrap: 4.6.2_jquery@3.6.3+popper.js@1.16.1
+      bootstrap: 4.6.2_popper.js@1.16.1
       popper.js: 1.16.1
       portal-vue: 2.1.7_vue@3.2.45
       vue-functional-data-merge: 3.1.0
@@ -1309,13 +1305,12 @@ packages:
       - vue
     dev: true
 
-  /bootstrap/4.6.2_jquery@3.6.3+popper.js@1.16.1:
+  /bootstrap/4.6.2_popper.js@1.16.1:
     resolution: {integrity: sha512-51Bbp/Uxr9aTuy6ca/8FbFloBUJZLHwnhTcnjIeRn2suQWsWzcuJhGjKDB5eppVte/8oCdOL3VuwxvZDUggwGQ==}
     peerDependencies:
       jquery: 1.9.1 - 3
       popper.js: ^1.16.1
     dependencies:
-      jquery: 3.6.3
       popper.js: 1.16.1
     dev: true
 
@@ -3174,10 +3169,6 @@ packages:
       supports-color: 8.1.1
     dev: true
 
-  /jquery/3.6.3:
-    resolution: {integrity: sha512-bZ5Sy3YzKo9Fyc8wH2iIQK4JImJ6R0GWI9kL1/k7Z91ZBNgkRXE6U0JfHIizZbort8ZunhSI3jw9I6253ahKfg==}
-    dev: true
-
   /js-sdsl/4.1.5:
     resolution: {integrity: sha512-08bOAKweV2NUC1wqTtf3qZlnpOX/R2DU9ikpjOHs0H+ibQv3zpncVQg6um4uYtRtrwIX8M4Nh3ytK4HGlYAq7Q==}
     dev: true
@@ -3769,18 +3760,6 @@ packages:
     resolution: {integrity: sha512-+yCno2oB3xA7irTt0EU5Ezw22L2J51uKAacE/6hMPMoO/mx3h4rXFkkBkT4GFsMDv/vEe8TNKC3ujJJ0PTwb6g==}
     peerDependencies:
       vue: ^2.5.18
-    dependencies:
-      vue: 3.2.45
-    dev: true
-
-  /portal-vue/3.0.0_vue@3.2.45:
-    resolution: {integrity: sha512-9eprMxNURLx6ijbcgkWjYNcTWJYu/H8QF8nyAeBzOmk9lKCea01BW1hYBeLkgz+AestmPOvznAEOFmNuO4Adjw==}
-    engines: {node: '>=14.19'}
-    peerDependencies:
-      vue: ^3.0.4
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dependencies:
       vue: 3.2.45
     dev: true

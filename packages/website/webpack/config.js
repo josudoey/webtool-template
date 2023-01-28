@@ -3,7 +3,6 @@ import MiniCssExtractPlugin from '~webpack5/plugins/mini-css-extract.js'
 import CssMinimizerPlugin from '~webpack5/plugins/css-minimizer.js'
 import TerserPlugin from '~webpack5/plugins/terser.js'
 import HtmlWebpackPlugin from '~webpack5/plugins/html.js'
-import webpack from '~webpack5'
 
 import { createRequire } from 'module'
 import { fileURLToPath } from 'url'
@@ -89,7 +88,7 @@ export default function (env) {
       rules: [{
         test: /render.pug$/,
         use: [{
-          loader: require.resolve('~webpack5/vue3-template-loader.js'),
+          loader: require.resolve('~vue3-template-loader'),
           options: {}
         }, {
           loader: require.resolve('~webpack5/pug-plain-loader.js')

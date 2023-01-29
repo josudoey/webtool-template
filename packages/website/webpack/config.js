@@ -31,7 +31,7 @@ export default function (env) {
   return {
     target: 'web',
     mode: 'production',
-    entry: require.resolve('./entry.js'),
+    entry: require.resolve('./entry/main.js'),
     resolve: {
       alias: {
         vue: '@vue/compat'

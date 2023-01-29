@@ -6,7 +6,7 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import { createApp } from '../app.js'
+import { createApp } from '../../app.js'
 
 Vue.component('Portal', Portal)
 Vue.component('PortalTarget', PortalTarget)

@@ -2,11 +2,7 @@ import Vue from 'vue'
 import { Portal, PortalTarget } from 'portal-vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
-// Import Bootstrap an BootstrapVue CSS files (order is important)
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
-import { createApp } from '../../app.js'
+import { createApp } from '../app.js'
 
 Vue.component('Portal', Portal)
 Vue.component('PortalTarget', PortalTarget)

@@ -23,21 +23,16 @@
   },
   "homepage": "https://github.com/josudoey/webtool-template#readme",
   "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
     "@vue/compat": "^3.3.4",
+    "@vue/compiler-sfc": "^3.3.4",
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.23.1",
     "popper.js": "^1.16.1",
-    "portal-vue": "^v2.1.7",
+    "portal-vue": "^2.1.7",
+    "pug": "^3.0.2",
     "vite": "^4.4.3",
     "vue": "^3.3.4",
-    "vue-router": "^4.1.6",
-    "@rollup/plugin-alias": "^5.0.0",
-    "@vitejs/plugin-vue": "^4.2.3",
-    "@vue/compiler-sfc": "^3.3.4",
-    "lodash": "^4.17.21",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-pug": "^1.1.1",
-    "rollup-plugin-vue": "^6.0.0"
-  },
-  "dependencies": {}
+    "vue-router": "^4.1.6"
+  }
 }

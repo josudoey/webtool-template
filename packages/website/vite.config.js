@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 // ref https://vitejs.dev/guide/#trying-vite-online
 export default defineConfig(() => {
   return {
+    base: './',
     resolve: {
       alias: {
         vue: '@vue/compat'

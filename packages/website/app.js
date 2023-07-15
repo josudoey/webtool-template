@@ -1,5 +1,5 @@
 import { createApp as createVueApp } from 'vue'
-import Outlet from './outlet/index.js'
+import Outlet from './outlet/component.vue'
 import { createRouter } from './router.js'
 
 export function createApp () {

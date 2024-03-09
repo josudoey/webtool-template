@@ -64,6 +64,9 @@ importers:
       bootstrap-vue:
         specifier: ^2.23.1
         version: 2.23.1(vue@3.3.4)
+      picocolors:
+        specifier: ^1.0.0
+        version: 1.0.0
       popper.js:
         specifier: ^1.16.1
         version: 1.16.1

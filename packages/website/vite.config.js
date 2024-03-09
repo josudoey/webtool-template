@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import PugHotReload from './vite.pug.hot.reload.js'
 
 // ref https://vitejs.dev/guide/#trying-vite-online
 export default defineConfig(() => {
@@ -20,7 +21,8 @@ export default defineConfig(() => {
       }
     },
     plugins: [
-      vue()
+      vue(),
+      PugHotReload()
     ],
     server: {
       port: 8080
